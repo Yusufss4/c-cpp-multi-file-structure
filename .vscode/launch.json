@@ -1,14 +1,12 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    // You need to change the "program": output executible file name. 
+    // Debugger path for the linux should be added. 
     "version": "0.2.0",
     "configurations": [
         {
             "name": "g++.exe - Build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/src/hellomake.exe",
             "args": [],
             "stopAtEntry": true,
             "cwd": "${workspaceFolder}/src",
@@ -16,9 +14,11 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "windows": {
+                "program": "${workspaceFolder}/src/hellomake.exe",
                 "miDebuggerPath": "C:\\msys64\\mingw64\\bin\\gdb.exe"
             },
             "linux": {
+                "program": "${workspaceFolder}/src/hellomake.out",
                 "miDebuggerPath": ""
             },
             "setupCommands": [

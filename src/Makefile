@@ -7,9 +7,11 @@ LDIR =../lib
 
 LIBS=-lm
 
+#Add file names in the include folder. 
 _DEPS = hellomake.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
+#Add file names in the src folder.
 _OBJ = hellomake.o hellofunc.o 
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
@@ -17,6 +19,7 @@ OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 $(ODIR)/%.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
+#Change the name of "hellomake" to your executible. 
 hellomake: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS) $(LIBS)
 
